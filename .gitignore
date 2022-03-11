@@ -20,5 +20,6 @@
 ###< phpunit/phpunit ###
 
 ###> liip/imagine-bundle ###
+/public/uploads/
 /public/media/cache/
 ###< liip/imagine-bundle ###
