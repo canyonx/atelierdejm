@@ -1,0 +1,22 @@
+{# <div class="row">
+	{% for image in field.value %}
+		<div class="col-3 my-3">
+			<img src="{{ asset('/uploads/images/' ~ image) }}" class="img-fluid">
+		</div>
+	{% endfor %}
+</div> #}
+
+
+<div class="row">
+	{% for key,image in field.value %}
+		<div class="col-2 my-3">
+			<a href="#" class="ea-lightbox-thumbnail" data-ea-lightbox-content-selector="{{ '#ea-lightbox-' ~ key }}">
+				<img src="{{ asset('/uploads/images/' ~ image) }}" class="img-fluid">
+			</a>
+		</div>
+
+		<div id="{{ 'ea-lightbox-' ~ key }}" class="ea-lightbox">
+			<img src="{{ asset('/uploads/images/' ~ image) }}" class="img-fluid">
+		</div>
+	{% endfor %}
+</div>

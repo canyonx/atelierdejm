@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions générales de vente
+{% endblock %}
+
+{% block body %}
+	<div class="container marketing mt-5">
+		<h1>Conditions générales de vente</h1>
+		<p>
+			Informations concenant les modalités de vente et de réparation
+		</p>
+		<hr>
+
+		{% for key,term in terms %}
+			<div class="my-5">
+				<h3 class="text-muted">{{ key + 1 }}.
+					{{ term.title }}</h3>
+				<div class="ml-5">
+					{{ term.description | raw }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

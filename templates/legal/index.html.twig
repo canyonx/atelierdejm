@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales
+{% endblock %}
+
+{% block body %}
+	<div class="container marketing mt-5">
+		<h1>Mentions légales</h1>
+		<p>
+			Informations concenant le site internet
+		</p>
+		<hr>
+
+		{% for key,mention in mentions %}
+			<div class="my-5">
+				<h3 class="text-muted">{{ key + 1 }}.
+					{{ mention.title }}</h3>
+				<div class="ml-5">
+					{{ mention.description | raw }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

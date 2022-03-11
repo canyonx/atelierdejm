@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="container marketing mt-5">
+		<div class="row">
+			<div class="col-md-6">
+				{% if (product.illustrations | length) > 1 %}
+
+					{% for key,image in product.illustrations %}
+
+						<img src="{{ asset('uploads/images/' ~ image) | imagine_filter('product_image') }}" alt="image de {{ product.name }}" class="mySlides w-100 img-fluid" {% if key != 0 %} style="display:none" {% endif %}>
+					{% endfor %}
+
+					<div class="row">
+						{% for key,image in product.illustrations %}
+							<div class="col-3 my-3">
+								<img src="{{ asset('/uploads/images/' ~ image) }}" class="img-fluid" style="cursor:pointer" onclick="currentDiv({{key + 1}})">
+							</div>
+						{% endfor %}
+					</div>
+				{% else %}
+					{% for image in product.illustrations %}
+						<img src="{{ asset('uploads/images/' ~ image) | imagine_filter('product_image') }}" alt="image de {{ product.name }}" class="img-fluid">
+					{% endfor %}
+				{% endif %}
+			</div>
+			<div class="col-md-6 my-5">
+				<h1 class="h2">{{ product.name }}</h1>
+				<p class=" product-subtitle">{{ product.subtitle }}</p>
+				<span class="h4 product-price">{{ product.price }}</span>
+				<hr>
+				<p>{{ product.description | raw }}</p>
+
+			</div>
+		</div>
+
+
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script>
+		function currentDiv(n) {
+showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+var i;
+var x = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("demo");
+if (n > x.length) {
+slideIndex = 1
+}
+if (n < 1) {
+slideIndex = x.length
+}
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+}
+x[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " w3-opacity-off";
+}
+	</script>
+{% endblock %}

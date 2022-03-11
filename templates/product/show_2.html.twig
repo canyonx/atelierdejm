@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="container marketing mt-5">
+		<div class="row mb-5">
+			<div
+				class="col-md-6 mb-3">
+				{# <div class="border p-2 card rounded shadow"> #}
+				<div class="mb-3">
+					<img src="{{ asset('uploads/images/' ~ product.illustrations | first) }}" alt="{{ product.name }}" class="img-fluid">
+
+				</div>
+
+				<div class="row">
+					{% for key,image in images %}
+						{% if key != 0 %}
+							<div class="col-md-3 mb-3">
+								<img src="{{ asset('uploads/images/' ~ image.image) }}" alt="{{ product.name }}" class="img-fluid">
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-md-6 my-auto">
+				<h1 class="h2">{{ product.name }}</h1>
+				<p class=" product-subtitle">{{ product.subtitle }}</p>
+				<span class="h4 product-price">{{ product.price }}</span>
+				<hr>
+				<p>{{ product.description | raw }}</p>
+
+			</div>
+		</div>
+
+
+	</div>
+	<hr>
+{% endblock %}

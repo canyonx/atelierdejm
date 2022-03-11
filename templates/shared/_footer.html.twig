@@ -1,0 +1,19 @@
+<!-- FOOTER -->
+<footer class="container text-center mt-5">
+	{% set JM = contactRepository.findOneById(2) %}
+	<p>{{ JM.fullname }}
+		-
+		{{ JM.phone }}
+		-
+		{{ JM.email }}</p>
+	<p>&copy;
+		{{ "now" | date("Y") }}
+		Répartout Inc. &middot;
+		<a href="{{ path('legal') }}">Mentions légales</a>
+		&middot;
+		<a href="{{ path('term') }}">CGV</a>
+	</p>
+	<p class="text-center">
+		<small>- Conception Mattéo Dauchez -</small>
+	</p>
+</footer>

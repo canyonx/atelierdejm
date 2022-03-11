@@ -1,0 +1,18 @@
+<div class="product-item text-center card pb-3 my-3 bg-white">
+	<div class="card-body">
+		<img src="{{ asset('uploads/contact/' ~ contact.illustration) | imagine_filter('product_image') }}" alt="{{ contact.name }}" class="rounded-circle img-fluid mb-3">
+		<h2 class="card-title">{{ contact.name }}</h2>
+		<p class="card-text">{{ contact.description }}</p>
+		<hr>
+		<p class="card-text text-left">
+			<i class="fas fa-phone"></i>
+			{{ contact.phone }}
+			<br><br>
+			<i class="fas fa-envelope"></i>
+			{{ contact.email }}
+			<br><br>
+			<i class="fas fa-globe"></i>
+			<a href="{{ contact.website }}">{{ contact.website }}</a>
+		</p>
+	</div>
+</div>

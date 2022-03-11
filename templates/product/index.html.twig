@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Réparations
+{% endblock %}
+
+{% block body %}
+	<div class="container marketing mt-5">
+		<h1>Nos réparations</h1>
+		<p>Les répartions et améliorations de combinaison néoprene</p>
+		<hr>
+
+		<div class="row">
+			{% for product in products %}
+				<div class="col-md-4">
+					{% include "shared/_card.html.twig" %}
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+.block-small {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.form-control {
+    margin-bottom: 1.5rem;
+}

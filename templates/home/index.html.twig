@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réparations néoprene
+{% endblock %}
+
+{% block body %}
+
+	{% include "shared/_carousel.html.twig" %}
+
+	<div class="container marketing">
+
+		{% if products | length > 0 %}
+			<div class="row">
+				{% for product in products %}
+					<div class="col-md-4">
+						{% include "shared/_card.html.twig" %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if featurettes | length > 0 %}
+
+			{% for key,featurette in featurettes %}
+				{% include "shared/_featurette.html.twig" %}
+			{% endfor %}
+
+		{% endif %}
+
+	</div>
+{% endblock %}
