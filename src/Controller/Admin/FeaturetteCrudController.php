@@ -27,7 +27,7 @@ class FeaturetteCrudController extends AbstractCrudController
             ImageField::new('illustration')
                 ->setBasePath('uploads/featurette/')
                 ->setUploadDir('public/uploads/featurette/')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setUploadedFileNamePattern('[name]-[randomhash].[extension]')
                 ->setRequired(false),
         ];
     }

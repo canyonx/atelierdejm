@@ -26,7 +26,7 @@ class ContactCrudController extends AbstractCrudController
             ImageField::new('illustration')
                 ->setBasePath('uploads/contact/')
                 ->setUploadDir('public/uploads/contact/')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setUploadedFileNamePattern('[name]-[randomhash].[extension]')
                 ->setRequired(false),
             TextField::new('website', 'Site web'),
             TextField::new('phone', 'Téléphone'),
