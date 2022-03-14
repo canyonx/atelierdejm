@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class FeaturetteCrudController extends AbstractCrudController
@@ -22,7 +23,7 @@ class FeaturetteCrudController extends AbstractCrudController
         return [
             BooleanField::new('isShow', 'Afficher'),
             TextField::new('title', 'Titre'),
-            TextareaField::new('description', 'Description')
+            TextEditorField::new('description', 'Description')
                 ->hideOnIndex(),
             ImageField::new('illustration')
                 ->setBasePath('uploads/featurette/')

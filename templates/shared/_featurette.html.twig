@@ -3,7 +3,7 @@
 	<div class="col-md-7 {% if (key / 2) matches '/^\\d+$/' %} order-md-2{% endif %}">
 		<h2 class="featurette-heading">{{ featurette.title }}</span>
 	</h2>
-	<p class="lead">{{ featurette.description }}</p>
+	<p class="lead">{{ featurette.description | raw }}</p>
 </div>
 <div class="col-md-5 {% if (key / 2) matches '/^\\d+$/' %} order-md-1{% endif %}">
 	<img class="featurette-image img-fluid mx-auto" src="{{ asset('uploads/featurette/' ~ featurette.illustration) | imagine_filter('product_image') }}" alt="{{ featurette.title }}">

@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
+     * Boutique, tous les produits
      * @Route("/nos-produits", name="products")
      */
     public function index(
@@ -24,6 +25,7 @@ class ProductController extends AbstractController
     }
 
     /**
+     * Voir un produit
      * @Route("/nos-produits/{slug}", name="product_show")
      */
     public function show(
