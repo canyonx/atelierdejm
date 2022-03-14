@@ -9,10 +9,23 @@
 
 <div class="row">
 	{% for key,image in field.value %}
+
+		{% set url = ea_url()
+			.setController('App\\Controller\\Admin\\IllustrationCrudController')
+			.setAction('delete') 
+			.setEntityId(image.id) %}
+
 		<div class="col-2 my-3">
-			<a href="#" class="ea-lightbox-thumbnail" data-ea-lightbox-content-selector="{{ '#ea-lightbox-' ~ key }}">
-				<img src="{{ asset('/uploads/images/' ~ image) }}" class="img-fluid">
-			</a>
+			<div class="d-flex justify-content-center flex-wrap">
+<div>
+				<a href="#" class="ea-lightbox-thumbnail" data-ea-lightbox-content-selector="{{ '#ea-lightbox-' ~ key }}">
+					<img src="{{ asset('/uploads/images/' ~ image) }}" class="img-fluid">
+				</a>
+</div>
+<div class="d-flex align-items-end">
+				<a href="{{ url }}" class="btn btn-danger">Supprimer</a>
+</div>
+			</div>
 		</div>
 
 		<div id="{{ 'ea-lightbox-' ~ key }}" class="ea-lightbox">

@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TermController extends AbstractController
 {
     /**
-     * @Route("/term", name="term")
+     * @Route("/cgv", name="term")
      */
     public function index(
         TermRepository $termRepository
