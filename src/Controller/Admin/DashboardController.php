@@ -7,12 +7,13 @@ use App\Entity\User;
 use App\Entity\Legal;
 use App\Entity\Header;
 use App\Entity\Contact;
+use App\Entity\Gallery;
 use App\Entity\Product;
+use App\Entity\Setting;
 use App\Entity\Featurette;
+use App\Entity\Illustration;
 use Symfony\Component\HttpFoundation\Response;
 use App\Controller\Admin\ProductCrudController;
-use App\Entity\Gallery;
-use App\Entity\Illustration;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -21,13 +22,20 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
+    protected $adminUrlGenerator;
+
+    public function __construct(AdminUrlGenerator $adminUrlGenerator)
+    {
+        $this->adminUrlGenerator = $adminUrlGenerator;
+    }
+
     /**
      * @Route("/admin", name="admin")
      */
     public function index(): Response
     {
         // redirect to some CRUD controller
-        $routeBuilder = $this->get(AdminUrlGenerator::class);
+        $routeBuilder = $this->adminUrlGenerator;
 
         return $this->redirect($routeBuilder->setController(ProductCrudController::class)->generateUrl());
     }
@@ -35,7 +43,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Reparations');
+            ->setTitle('Atelier de JM');
     }
 
     public function configureMenuItems(): iterable
@@ -49,5 +57,9 @@ class DashboardController extends AbstractDashboardController
         // yield MenuItem::linkToCrud('Users', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('CGV', 'fa fa-file-contract', Term::class);
         yield MenuItem::linkToCrud('Mentions légales', 'fa fa-ellipsis-h', Legal::class);
+        // Configuration
+        yield MenuItem::linkToCrud('Configuration', 'fas fa-cog', Setting::class)
+            ->setQueryParameter('crudAction', 'detail')
+            ->setQueryParameter('entityId', '1');
     }
 }

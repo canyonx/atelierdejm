@@ -20,6 +20,10 @@
 ###< phpunit/phpunit ###
 
 ###> liip/imagine-bundle ###
-/public/uploads/
 /public/media/cache/
 ###< liip/imagine-bundle ###
+
+### à ignorer
+/public/uploads/
+/.htaccess
+/error_log

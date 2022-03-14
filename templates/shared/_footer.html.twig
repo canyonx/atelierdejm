@@ -1,14 +1,14 @@
 <!-- FOOTER -->
 <footer class="container text-center mt-5">
-	{% set JM = contactRepository.findOneById(2) %}
-	<p>{{ JM.fullname }}
+	<p>{{ setting.find(1).title }}
 		-
-		{{ JM.phone }}
+		{{ setting.find(1).phone }}
 		-
-		{{ JM.email }}</p>
+		{{ setting.find(1).email }}</p>
 	<p>&copy;
 		{{ "now" | date("Y") }}
-		Répartout Inc. &middot;
+		{{ setting.find(1).title }}
+		&middot;
 		<a href="{{ path('legal') }}">Mentions légales</a>
 		&middot;
 		<a href="{{ path('term') }}">CGV</a>

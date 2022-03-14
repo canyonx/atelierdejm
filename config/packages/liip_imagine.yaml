@@ -27,3 +27,9 @@ liip_imagine:
                     size:          [600, 600]
                     mode:          outbound
                     allow_upscale: true
+                
+        favicon:
+            filters:
+                thumbnail:
+                    size:          [32, 32]
+                    mode:          outbound
