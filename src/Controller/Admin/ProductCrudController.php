@@ -38,7 +38,7 @@ class ProductCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            BooleanField::new('isBest', 'Afficher'),
+            BooleanField::new('isBest', 'Mis en avant'),
             //ArrayField::new('illustrations'),
             ArrayField::new('illustrations')
                 ->setTemplatePath('admin/imageCrud.html.twig')
