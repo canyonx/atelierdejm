@@ -2,7 +2,7 @@
 	class="product-item text-center card pb-3 mb-3 bg-white">
 	{# <a href="{{ path('product', {'product_slug': product.slug}) }}"> #}
 	<a href="{{ path('product_show', {'slug': product.slug}) }}">
-		<img src="{{ asset('uploads/images/' ~ product.illustrations | first) | imagine_filter('product_image') }}" alt="{{ product.name }}" class="img-fluid" width="350px">
+		<img src="{{ asset('uploads/images/' ~ product.illustrations | first) | imagine_filter('product_image') }}" alt="{{ product.name }}" class="img-fluid" width="350px" height="350px">
 	</a>
 	<div class="card-body">
 		<h5 class="card-title">{{ product.name }}

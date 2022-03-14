@@ -10,7 +10,7 @@
 			</p>
 		</div>
 		<div class="col-md-5 {% if (key / 2) matches '/^\\d+$/' %} order-md-1{% endif %}">
-			<img class="featurette-image img-fluid mx-auto" src="{{ asset('uploads/featurette/' ~ featurette.illustration) | imagine_filter('product_image') }}" alt="{{ featurette.title }}" width="500px">
+			<img class="featurette-image img-fluid mx-auto" src="{{ asset('uploads/featurette/' ~ featurette.illustration) | imagine_filter('product_image') }}" alt="{{ featurette.title }}" width="500px" height="500px">
 		</div>
 	</div>
 </div>
