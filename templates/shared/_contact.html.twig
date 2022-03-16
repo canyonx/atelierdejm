@@ -5,14 +5,20 @@
 		<p class="card-text">{{ contact.description }}</p>
 		<hr>
 		<p class="card-text text-left">
-			<i class="fas fa-phone"></i>
-			{{ contact.phone }}
-			<br><br>
-			<i class="fas fa-envelope"></i>
-			{{ contact.email }}
-			<br><br>
-			<i class="fas fa-globe"></i>
-			<a href="{{ contact.website }}">{{ contact.website }}</a>
+			{% if contact.phone %}
+				<i class="fas fa-phone"></i>
+				{{ contact.phone }}
+			{% endif %}
+			{% if contact.email %}
+				<br><br>
+				<i class="fas fa-envelope"></i>
+				{{ contact.email }}
+			{% endif %}
+			{% if contact.website %}
+				<br><br>
+				<i class="fas fa-globe"></i>
+				<a href="{{ contact.website }}">{{ contact.website }}</a>
+			{% endif %}
 		</p>
 	</div>
 </div>
