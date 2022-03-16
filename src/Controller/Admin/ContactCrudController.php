@@ -19,7 +19,6 @@ class ContactCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name', 'Nom'),
-            TextField::new('fullname', 'Propriétaire'),
             TextField::new('email'),
             TextareaField::new('description', 'Description')
                 ->hideOnIndex(),

@@ -23,12 +23,12 @@ class Header
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $btnTitle;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $btnUrl;
 
@@ -81,7 +81,7 @@ class Header
         return $this->btnUrl;
     }
 
-    public function setBtnUrl(string $btnUrl): self
+    public function setBtnUrl(?string $btnUrl): self
     {
         $this->btnUrl = $btnUrl;
 
