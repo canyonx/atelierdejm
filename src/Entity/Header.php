@@ -69,7 +69,7 @@ class Header
         return $this->btnTitle;
     }
 
-    public function setBtnTitle(string $btnTitle): self
+    public function setBtnTitle(?string $btnTitle): self
     {
         $this->btnTitle = $btnTitle;
 
